@@ -1,12 +1,32 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import "../../styles/Navbar.scss";
 
 function navbar(): JSX.Element {
   return (
-    <Container fluid>
-      <Row>Hello...</Row>
-    </Container>
+    <Navbar collapseOnSelect expand="lg">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="m-auto green-links">
+          <Nav.Link href="#" className="mx-4">
+            Home
+          </Nav.Link>
+          <Nav.Link href="##" className="mx-4">
+            Meals
+          </Nav.Link>
+          <Nav.Link href="###" className="mx-4">
+            About Us
+          </Nav.Link>
+          <Nav.Link href="####" className="mx-4">
+            Services
+          </Nav.Link>
+          <Nav.Link href="#####" className="mx-4">
+            Contact
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
