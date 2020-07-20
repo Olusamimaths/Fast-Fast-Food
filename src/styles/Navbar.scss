@@ -1,11 +1,13 @@
-.green-links a {
-  color: green !important;
-}
+.green-links {
+  a {
+    color: green !important;
+    
+    &:hover {
+      color: grey !important;
+    }
 
-.green-links a:hover {
-  color: grey !important;
-}
-
-.green-links a.active {
-  font-weight: bold;
+    &.active {
+      font-weight: bold;
+    }
+  }
 }
