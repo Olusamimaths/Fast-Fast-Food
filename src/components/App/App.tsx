@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "../Navbar";
+import Navigation from "../Navigation";
 import "../../styles/App.scss";
 
-function App(): JSX.Element {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <Navbar />
+      <Navigation />
     </div>
   );
-}
+};
 
 export default App;
