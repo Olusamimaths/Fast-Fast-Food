@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
 import "../../styles/FoodCard.scss";
 
 interface FoodCardProps {
@@ -22,9 +24,17 @@ const FoodCard: React.FC<FoodCardProps> = ({
       <Card.Body>
         <Card.Title className="text-secondary">{title}</Card.Title>
         <Card.Text className="text-primary">{description}</Card.Text>
-        <Button variant="secondary" href={link}>
-          Add
-        </Button>
+        <InputGroup className="mb-3">
+          <FormControl
+            placeholder="1"
+            aria-label="Amount"
+            aria-describedby="basic-addon2"
+            type="number"
+          />
+          <InputGroup.Append>
+            <Button variant="outline-secondary" href={link}>Add to Cart</Button>
+          </InputGroup.Append>
+        </InputGroup>
       </Card.Body>
     </Card>
   );

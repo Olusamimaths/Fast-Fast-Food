@@ -1,17 +1,10 @@
 import React from "react";
-import Navigation from "../Navigation";
-import "../../styles/App.scss";
-import FoodCarousel from "../FoodCarousel";
-import Foods from "../Foods/Foods";
+import Home from '../Home/Home'
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <Navigation />
-      <FoodCarousel />
-      <Foods />
-    </div>
-  );
+    return (
+        <Home />
+    );
 };
 
 export default App;

@@ -14,7 +14,7 @@ interface TopBarProps {
 
 const TopBar: React.FC<TopBarProps> = ({ location = "Ogun" }) => {
   return (
-    <Container fluid className="m-3 ">
+    <Container fluid className="p-4">
       <Row className="justify-content-md-center">
         <Col
           sm="8"

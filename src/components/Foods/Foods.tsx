@@ -8,7 +8,7 @@ import foodItems from "./data";
 
 const Foods: React.FC = () => {
   return (
-    <Container fluid className="p-5 d-flex flex-column">
+    <Container fluid className="p-5 flex-column">
       <Row className="mb-5">
         <h2 className="m-3 foods-title text-secondary">Foods</h2>
       </Row>

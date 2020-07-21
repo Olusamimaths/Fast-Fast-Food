@@ -26,12 +26,12 @@ const navlinks: NavLinks = [
 
   {
     href: "#",
-    link_text: "Services",
+    link_text: "Login",
     classNames: "",
   },
   {
     href: "#",
-    link_text: "Contact Us",
+    link_text: "Sign up",
     classNames: "",
   },
 ];
