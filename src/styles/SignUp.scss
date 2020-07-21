@@ -1,6 +1,6 @@
 .signup-image-container {
   background: linear-gradient(rgba(38, 70, 83, 0.5), rgba(38, 70, 83, 0.8)),
-    url(../images/signup_bg.jpg) no-repeat center/cover;
+    url(../images/signup_bg_sm.jpg) no-repeat center/cover;
   height: 100vh;
 }
 
@@ -8,13 +8,25 @@
   background-color: #f1faee;
 }
 
+.return-home {
+  float: right;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .signup-image-container {
+    background-image: url(../images/signup_bg.jpg);
+  }
+}
+
 @media (max-width: 576px) {
+  .return-home {
+    float: none;
+  }
   .signup-image-container {
     display: none;
   }
   .signup-form-container {
     background: linear-gradient(rgba(38, 70, 83, 0.8), rgba(38, 70, 83, 0.8)),
-      url(../images/signup_bg.jpg) no-repeat center/cover;
+      url(../images/signup_bg_sm.jpg) no-repeat center/cover;
 
     color: #fff;
   }

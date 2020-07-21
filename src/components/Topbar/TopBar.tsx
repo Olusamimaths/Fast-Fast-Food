@@ -26,9 +26,15 @@ const TopBar: React.FC<TopBarProps> = ({ location = "Ogun" }) => {
             <TiLocation className="justify-content mr-2" /> {location}
           </div>
           <div className="text-secondary brand-text">Fast Fast Food</div>
-          <div className="cart">
-            <FaSearch className="mr-4" />
-            <FaShoppingCart />
+          <div className="cart d-flex align-items-center">
+            <div>
+              <FaSearch className="mr-4" />
+            </div>
+
+            <div className="d-flex align-items-center">
+              <FaShoppingCart fontSize="1.4rem" />{" "}
+              <p className="cart-counter">12</p>
+            </div>
           </div>
         </Col>
       </Row>
