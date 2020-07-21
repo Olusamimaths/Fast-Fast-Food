@@ -11,8 +11,8 @@ const Login: React.FC = () => {
   return (
     <Container fluid className="flex-row">
       <Row className="">
-        <Col className="p-5">
-          <h2 className="mb-3 pb-3 secondary-title">Login</h2>
+        <Col className="p-5 login-form-container" xs="12" sm="6" lg="6">
+          <h2 className="mb-5 pb-1 secondary-title">Login</h2>
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -34,7 +34,7 @@ const Login: React.FC = () => {
             </Button>
           </Form>
         </Col>
-        <Col className="login-image-container"></Col>
+        <Col className="login-image-container" xs="12" sm="6" lg="6"></Col>
       </Row>
     </Container>
   );
