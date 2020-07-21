@@ -19,7 +19,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
   link,
 }) => {
   return (
-    <Card className="mr-4 food-card">
+    <Card className="mr-4 food-card mb-5">
       <Card.Img variant="top" src={image} />
       <Card.Body>
         <Card.Title className="text-secondary">{title}</Card.Title>
@@ -32,7 +32,9 @@ const FoodCard: React.FC<FoodCardProps> = ({
             type="number"
           />
           <InputGroup.Append>
-            <Button variant="outline-secondary" href={link}>Add to Cart</Button>
+            <Button variant="outline-secondary" href={link}>
+              Add to Cart
+            </Button>
           </InputGroup.Append>
         </InputGroup>
       </Card.Body>

@@ -1,6 +1,8 @@
 .food-card {
-  width: 15rem;
   box-shadow: 3px 3px 20px;
+  min-width: 15rem;
+  max-width: 15rem;
+
 
   .card-img-top {
     transition: all 0.5s;
