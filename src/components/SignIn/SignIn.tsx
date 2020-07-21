@@ -5,16 +5,21 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import "../../styles/Login.scss";
+import "../../styles/SignIn.scss";
 
-const Login: React.FC = () => {
+const SignIn: React.FC = () => {
   return (
     <Container fluid className="flex-row">
       <Row className="">
-        <Col className="p-5 login-form-container" xs="12" sm="6" lg="6">
-          <h2 className="mb-5 pb-1 secondary-title">Login</h2>
+        <Col
+          className="p-5 d-flex flex-column signin-form-container justify-content-center"
+          xs="12"
+          sm="7"
+          lg="6"
+        >
+          <h2 className="mb-5 pb-1 secondary-title">signin</h2>
           <Form>
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group controlId="signinFormEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" />
               <Form.Text className="text-muted">
@@ -22,22 +27,22 @@ const Login: React.FC = () => {
               </Form.Text>
             </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
+            <Form.Group controlId="signinFormPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" />
             </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
+            <Form.Group controlId="signinFormCheckbox">
+              <Form.Check type="checkbox" label="Keep me signed in" />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="secondary" type="submit">
               Submit
             </Button>
           </Form>
         </Col>
-        <Col className="login-image-container" xs="12" sm="6" lg="6"></Col>
+        <Col className="signin-image-container" xs="12" sm="5" lg="6"></Col>
       </Row>
     </Container>
   );
 };
 
-export default Login;
+export default SignIn;
