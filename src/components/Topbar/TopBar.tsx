@@ -25,7 +25,7 @@ const TopBar: React.FC<TopBarProps> = ({ location = "Ogun" }) => {
           <div>
             <TiLocation className="justify-content mr-2" /> {location}
           </div>
-          <div className="brand-name">Fast Fast Food</div>
+          <div className="text-secondary brand-text">Fast Fast Food</div>
           <div className="cart">
             <FaSearch className="mr-4" />
             <FaShoppingCart />

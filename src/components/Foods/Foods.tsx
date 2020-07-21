@@ -2,38 +2,24 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { TiLocation } from "react-icons/ti";
-import { FaSearch } from "react-icons/fa";
+import FoodCard from "./FoodCard";
+import "../../styles/Foods.scss";
 
-import { FaShoppingCart } from "react-icons/fa";
-import "../../styles/TopBar.scss";
-
-interface TopBarProps {
-    location?: string;
-}
-
-const TopBar: React.FC<TopBarProps> = ({ location = "Ogun" }) => {
-    return (
-        <Container fluid className="m-3 ">
-            <Row className="justify-content-md-center">
-                <Col
-                    sm="8"
-                    xs="12"
-                    lg="8"
-                    className="d-flex justify-content-between align-items-center text-primary"
-                >
-                    <div>
-                        <TiLocation className="justify-content mr-2" /> {location}
-                    </div>
-                    <div className="brand-name">Fast Fast Food</div>
-                    <div className="cart">
-                        <FaSearch className="mr-4" />
-                        <FaShoppingCart />
-                    </div>
-                </Col>
-            </Row>
-        </Container>
-    );
+const Foods: React.FC = () => {
+  return (
+    <Container fluid className="p-5 d-flex flex-column">
+      <Row className="mb-5">
+        <h2 className="m-3 foods-title text-secondary">Foods</h2>
+      </Row>
+      <Row>
+        <Col className="d-flex align-items-center">
+          <FoodCard />
+          <FoodCard />
+          <FoodCard />
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
-export default TopBar;
+export default Foods;

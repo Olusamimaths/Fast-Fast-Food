@@ -1,11 +1,12 @@
-// interface NavLinks<Object> {
-//   {
-//       href: string;
-//   link_text: string;
-//   classNames: string;
-//   }
-// }
-const navlinks = [
+type Link = {
+  href: string;
+  link_text: string;
+  classNames: string;
+};
+
+type NavLinks = Link[];
+
+const navlinks: NavLinks = [
   {
     href: "#",
     link_text: "Home",
