@@ -10,28 +10,28 @@ const navlinks: NavLinks = [
   {
     href: "#",
     link_text: "Home",
-    classNames: "active",
-  },
-
-  {
-    href: "#",
-    link_text: "Meals",
-    classNames: "",
-  },
-  {
-    href: "#",
-    link_text: "About Us",
     classNames: "",
   },
 
+  // {
+  //   href: "#",
+  //   link_text: "Meals",
+  //   classNames: "",
+  // },
+  // {
+  //   href: "#",
+  //   link_text: "About Us",
+  //   classNames: "",
+  // },
+
   {
-    href: "#",
-    link_text: "Login",
+    href: "/signin",
+    link_text: "Sign In",
     classNames: "",
   },
   {
-    href: "#",
-    link_text: "Sign up",
+    href: "/signup",
+    link_text: "Sign Up",
     classNames: "",
   },
 ];

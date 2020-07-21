@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { BsFillHouseDoorFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 import "../../styles/SignIn.scss";
 
@@ -40,10 +41,9 @@ const SignIn: React.FC = () => {
               Don't have an account? <a href="#">Sign Up</a>
               <p className="return-home">
                 Go back to{" "}
-                <a href="#">
-                  {" "}
+                <Link to="../">
                   Home <BsFillHouseDoorFill />
-                </a>
+                </Link>
               </p>
             </Form.Text>
           </Form>

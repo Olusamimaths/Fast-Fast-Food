@@ -14,3 +14,9 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .food-card {
+    min-width: 80%;
+  }
+}
