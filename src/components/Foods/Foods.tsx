@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FoodCard from "./FoodCard";
 import "../../styles/Foods.scss";
+import foodItems from "./data";
 
 const Foods: React.FC = () => {
   return (
@@ -13,9 +14,15 @@ const Foods: React.FC = () => {
       </Row>
       <Row>
         <Col className="d-flex align-items-center">
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
+          {foodItems.map((food, i) => (
+            <FoodCard
+              title={food.title}
+              description={food.description}
+              link={food.link}
+              image={food.image}
+              key={i}
+            />
+          ))}
         </Col>
       </Row>
     </Container>
