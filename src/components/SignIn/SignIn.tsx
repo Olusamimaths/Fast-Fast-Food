@@ -38,7 +38,7 @@ const SignIn: React.FC = () => {
             </Button>
 
             <Form.Text className="text-muted mt-3">
-              Don't have an account? <a href="#">Sign Up</a>
+              Don't have an account? <Link to="../signup">Sign Up</Link>
               <p className="return-home">
                 Go back to{" "}
                 <Link to="../">

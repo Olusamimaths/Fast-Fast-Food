@@ -5,15 +5,4 @@ $theme-colors: (
 
 $secondary: #e76f51;
 
-.cart-counter {
-  background-color: $secondary;
-  border-radius: 50%;
-  padding: 0.2rem 0.3rem;
-  font-size: 0.8rem;
-  color: #fff;
-  position: relative;
-  left: -0.3rem;
-  font-weight: bold;
-}
-
 @import "~bootstrap/scss/bootstrap";

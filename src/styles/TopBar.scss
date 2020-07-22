@@ -2,3 +2,19 @@
   text-transform: uppercase;
   font-weight: bolder;
 }
+
+.scrolling {
+  background-color: #e76f51;
+  color: #fff;
+
+  .brand-text,
+  .cart,
+  .location {
+    color: #fff;
+
+    .cart-counter {
+      background-color: #f1faee;
+      color: #e76f51;
+    }
+  }
+}

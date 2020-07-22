@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { TiLocation } from "react-icons/ti";
 import { FaSearch } from "react-icons/fa";
+import Cart from "../Cart/Cart";
+import onScorll from "../../utils/onScroll";
 
-import { FaShoppingCart } from "react-icons/fa";
 import "../../styles/TopBar.scss";
 
 interface TopBarProps {
@@ -13,8 +14,9 @@ interface TopBarProps {
 }
 
 const TopBar: React.FC<TopBarProps> = ({ location = "Ogun" }) => {
+  useEffect(() => onScorll());
   return (
-    <Container fluid className="p-4">
+    <Container fluid className="pl-4 pt-2 pb-2 sticky-top" id="header">
       <Row className="justify-content-md-center">
         <Col
           sm="8"
@@ -22,19 +24,16 @@ const TopBar: React.FC<TopBarProps> = ({ location = "Ogun" }) => {
           lg="8"
           className="d-flex justify-content-between align-items-center text-primary"
         >
-          <div>
+          <div className="location">
             <TiLocation className="justify-content mr-2" /> {location}
           </div>
-          <div className="text-secondary brand-text">Fast Fast Food</div>
+          <div className="brand-text">Fast Fast Food</div>
           <div className="cart d-flex align-items-center">
             <div>
               <FaSearch className="mr-4" />
             </div>
 
-            <div className="d-flex align-items-center">
-              <FaShoppingCart fontSize="1.4rem" />{" "}
-              <p className="cart-counter">12</p>
-            </div>
+            <Cart />
           </div>
         </Col>
       </Row>
