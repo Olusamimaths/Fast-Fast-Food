@@ -16,3 +16,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.secondary-title {
+  border-bottom: 6px solid #e76f51;
+  width: fit-content;
+}

@@ -33,7 +33,7 @@ const FoodCard: React.FC<FoodCardProps> = ({
           />
           <InputGroup.Append>
             <Button variant="outline-secondary" href={link}>
-              Add to Cart
+              Add 
             </Button>
           </InputGroup.Append>
         </InputGroup>

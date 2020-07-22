@@ -1,0 +1,34 @@
+.signin-image-container {
+  background: linear-gradient(rgba(38, 70, 83, 0.5), rgba(38, 70, 83, 0.8)),
+    url(../images/signin_bg_sm.jpg) no-repeat center/cover;
+  height: 100vh;
+}
+
+.signin-form-container {
+  background-color: #f1faee;
+}
+
+.return-home {
+  float: right;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .signin-image-container {
+    background-image: url(../images/signin_bg.jpg);
+  }
+}
+
+@media (max-width: 576px) {
+  .return-home {
+    float: none;
+  }
+  .signin-image-container {
+    display: none;
+  }
+  .signin-form-container {
+    background: linear-gradient(rgba(38, 70, 83, 0.8), rgba(38, 70, 83, 0.8)),
+      url(../images/signin_bg_sm.jpg) no-repeat center/cover;
+
+    color: #fff;
+  }
+}

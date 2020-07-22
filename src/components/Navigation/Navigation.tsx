@@ -1,8 +1,9 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import TopBar from "../TopBar/TopBar";
+import { NavLink } from "react-router-dom";
 import navlinks from "./navlinks";
-import TopBar from "../Topbar/TopBar";
 
 import "../../styles/Navbar.scss";
 
@@ -15,13 +16,13 @@ const Navigation: React.FC = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto green-links">
             {navlinks.map((navlink, i) => (
-              <Nav.Link
-                href={navlink.href}
+              <NavLink
+                to={navlink.href}
                 className={`mx-4 ${navlink.classNames}`}
                 key={i}
               >
                 {navlink.link_text}
-              </Nav.Link>
+              </NavLink>
             ))}
           </Nav>
         </Navbar.Collapse>

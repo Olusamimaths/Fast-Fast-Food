@@ -1,8 +1,7 @@
 .food-card {
-  box-shadow: 3px 3px 20px;
-  min-width: 15rem;
+  box-shadow: 2px 2px 20px;
+  // min-width: 15rem;
   max-width: 15rem;
-
 
   .card-img-top {
     transition: all 0.5s;
@@ -13,5 +12,11 @@
       opacity: 1;
       background: linear-gradient(rgba(200, 0, 0, 0.1), rgba(200, 0, 0, 0.1));
     }
+  }
+}
+
+@media (max-width: 576px) {
+  .food-card {
+    min-width: 80%;
   }
 }

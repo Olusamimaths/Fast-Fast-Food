@@ -49,6 +49,12 @@ const foodItems: FoodItems = [
     description: "Our pizza is the best!",
     link: "#",
   },
+  {
+    image: food3,
+    title: "Fried Rice",
+    description: "Fantabolous!!!!",
+    link: "#",
+  },
 ];
 
 export default foodItems;
