@@ -4,8 +4,27 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
 import { MdShoppingCart } from "react-icons/md";
 import "../../styles/CartSummary.scss";
+
+const cart = [
+  {
+    item: "Egusi",
+    price: "N300",
+    quantity: "3",
+  },
+  {
+    item: "Salad",
+    price: "N400",
+    quantity: "1",
+  },
+  {
+    item: "Bracolli",
+    price: "N700",
+    quantity: "4",
+  },
+];
 
 const CartSummary: React.FC = () => {
   return (
@@ -13,41 +32,34 @@ const CartSummary: React.FC = () => {
       <TopBar />
       <Container fluid className="flex-row">
         <Row className="">
-          <Col
-            className="p-5 d-flex flex-column"
-            xs="12"
-            sm="8"
-            lg="8"
-          >
+          <Col className="p-5 d-flex flex-column" xs="12" sm="8" lg="8">
             <h2 className="mb-5 pb-1 secondary-title">
               Cart Summary <MdShoppingCart />
             </h2>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive="sm" size="sm">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
+                  <th>Qty</th>
+                  <th>Item</th>
+                  <th>Price</th>
+                  <th>-</th>
                 </tr>
               </thead>
               <tbody>
+                {cart.map((item, i) => {
+                  return (
+                    <tr key={i}>
+                      <td>{item.quantity}</td>
+                      <td>{item.item}</td>
+                      <td>{item.price}</td>
+                      <td>{item.quantity}</td>
+                    </tr>
+                  );
+                })}
                 <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan="2">Larry the Bird</td>
-                  <td>@twitter</td>
+                  <td colSpan="2">Total</td>
+                  <td>N10000</td>
+                  <td>8</td>
                 </tr>
               </tbody>
             </Table>
