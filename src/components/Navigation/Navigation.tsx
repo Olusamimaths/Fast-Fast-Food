@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import navlinks from "./navlinks";
-import TopBar from "../Topbar/TopBar";
+import TopBar from "../TopBar/TopBar";
 import { NavLink } from "react-router-dom";
 
 import "../../styles/Navbar.scss";

@@ -1,6 +1,9 @@
 .brand-text {
   text-transform: uppercase;
   font-weight: bolder;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .scrolling {

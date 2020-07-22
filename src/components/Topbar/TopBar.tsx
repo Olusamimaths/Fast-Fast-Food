@@ -6,6 +6,7 @@ import { TiLocation } from "react-icons/ti";
 import { FaSearch } from "react-icons/fa";
 import Cart from "../Cart/Cart";
 import onScorll from "../../utils/onScroll";
+import { Link } from "react-router-dom";
 
 import "../../styles/TopBar.scss";
 
@@ -27,7 +28,9 @@ const TopBar: React.FC<TopBarProps> = ({ location = "Ogun" }) => {
           <div className="location">
             <TiLocation className="justify-content mr-2" /> {location}
           </div>
-          <div className="brand-text">Fast Fast Food</div>
+          <Link to="/" className="brand-text">
+            Fast Fast Food
+          </Link>
           <div className="cart d-flex align-items-center">
             <div>
               <FaSearch className="mr-4" />
