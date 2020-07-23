@@ -36,33 +36,39 @@ const CartSummary: React.FC = () => {
             <h2 className="mb-5 pb-1 secondary-title">
               Cart Summary <MdShoppingCart />
             </h2>
-            <Table striped bordered hover responsive="sm" size="sm">
-              <thead>
-                <tr>
-                  <th>Qty</th>
-                  <th>Item</th>
-                  <th>Price</th>
-                  <th>-</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cart.map((item, i) => {
-                  return (
-                    <tr key={i}>
-                      <td>{item.quantity}</td>
-                      <td>{item.item}</td>
-                      <td>{item.price}</td>
-                      <td>{item.quantity}</td>
-                    </tr>
-                  );
-                })}
-                <tr>
-                  <td colSpan="2">Total</td>
-                  <td>N10000</td>
-                  <td>8</td>
-                </tr>
-              </tbody>
-            </Table>
+            <div>
+              <Table striped bordered hover responsive="sm" size="sm">
+                <thead>
+                  <tr>
+                    <th>Qty</th>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>-</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cart.map((item, i) => {
+                    return (
+                      <tr key={i}>
+                        <td>{item.quantity}</td>
+                        <td>{item.item}</td>
+                        <td>{item.price}</td>
+                        <td>{item.quantity}</td>
+                      </tr>
+                    );
+                  })}
+                  <tr>
+                    <td colSpan="2">Total</td>
+                    <td>N10000</td>
+                    <td>8</td>
+                  </tr>
+                </tbody>
+              </Table>
+              <div className="d-flex justify-content-end">
+                <Button className="flex-right">Checkout</Button>
+              </div>
+              
+            </div>
           </Col>
           <Col className="cart-summary-container" xs="12" sm="4" lg="4"></Col>
         </Row>
