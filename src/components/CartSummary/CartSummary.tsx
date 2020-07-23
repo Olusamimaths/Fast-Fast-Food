@@ -8,23 +8,11 @@ import Button from "react-bootstrap/Button";
 import { MdShoppingCart } from "react-icons/md";
 import "../../styles/CartSummary.scss";
 
-const cart = [
-  {
-    item: "Egusi",
-    price: "N300",
-    quantity: "3",
-  },
-  {
-    item: "Salad",
-    price: "N400",
-    quantity: "1",
-  },
-  {
-    item: "Bracolli",
-    price: "N700",
-    quantity: "4",
-  },
-];
+import {
+  cart,
+  calcTotalPrice,
+  calcTotalQuantity,
+} from "../../utils/cartMethods";
 
 const CartSummary: React.FC = () => {
   return (
@@ -40,34 +28,35 @@ const CartSummary: React.FC = () => {
               <Table striped bordered hover responsive="sm" size="sm">
                 <thead>
                   <tr>
-                    <th>Qty</th>
+                    <th>#</th>
                     <th>Item</th>
                     <th>Price</th>
-                    <th>-</th>
+                    <th>Qty</th>
                   </tr>
                 </thead>
                 <tbody>
                   {cart.map((item, i) => {
                     return (
                       <tr key={i}>
-                        <td>{item.quantity}</td>
+                        <td>{i + 1}</td>
                         <td>{item.item}</td>
-                        <td>{item.price}</td>
+                        <td>N{item.price}</td>
                         <td>{item.quantity}</td>
                       </tr>
                     );
                   })}
                   <tr>
-                    <td colSpan="2">Total</td>
-                    <td>N10000</td>
-                    <td>8</td>
+                    <td colSpan="2" className="pt-4">
+                      Total
+                    </td>
+                    <td className="pt-4">N{calcTotalPrice(cart)}</td>
+                    <td className="pt-4">{calcTotalQuantity(cart)}</td>
                   </tr>
                 </tbody>
               </Table>
               <div className="d-flex justify-content-end">
                 <Button className="flex-right">Checkout</Button>
               </div>
-              
             </div>
           </Col>
           <Col className="cart-summary-container" xs="12" sm="4" lg="4"></Col>

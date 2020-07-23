@@ -21,3 +21,9 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .location {
+    display: none;
+  }
+}
