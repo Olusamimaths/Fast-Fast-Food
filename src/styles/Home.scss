@@ -1,3 +1,9 @@
+.decks {
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+// FOOD CARD STYLES
 .food-card {
   box-shadow: 2px 2px 20px;
   // min-width: 15rem;
