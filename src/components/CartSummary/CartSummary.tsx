@@ -1,5 +1,6 @@
 import React from "react";
 import TopBar from "../TopBar/TopBar";
+import Navigation from "../Navigation/Navigation";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -15,9 +16,10 @@ import {
 } from "../../utils/cartMethods";
 
 const CartSummary: React.FC = () => {
+  const loggedIn = false;
   return (
     <>
-      <TopBar />
+      {!loggedIn && <Navigation />}
       <Container fluid className="flex-row">
         <Row className="">
           <Col className="p-5 d-flex flex-column" xs="12" sm="8" lg="8">

@@ -3,8 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { TiLocation } from "react-icons/ti";
-import { FaSearch } from "react-icons/fa";
-import Cart from "../Cart/Cart";
+import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import onScorll from "../../utils/onScroll";
 import { Link } from "react-router-dom";
 
@@ -36,7 +35,10 @@ const TopBar: React.FC<TopBarProps> = ({ location = "Ogun" }) => {
               <FaSearch className="mr-4" />
             </div>
 
-            <Cart />
+            <Link to="/cart" className="d-flex align-items-center cart">
+              <FaShoppingCart fontSize="1.4rem" />{" "}
+              <p className="cart-counter">12</p>
+            </Link>
           </div>
         </Col>
       </Row>

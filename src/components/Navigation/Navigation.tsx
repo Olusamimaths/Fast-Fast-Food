@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import TopBar from "../TopBar/TopBar";
 import { NavLink } from "react-router-dom";
 import navlinks from "./navlinks";
 
@@ -10,7 +9,6 @@ import "../../styles/Navbar.scss";
 const Navigation: React.FC = () => {
   return (
     <>
-      <TopBar />
       <Navbar collapseOnSelect expand="sm">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
