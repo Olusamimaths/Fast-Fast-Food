@@ -1,0 +1,17 @@
+
+// CART STYLES
+.cart {
+  .cart-counter {
+    background-color: #e76f51;
+    border-radius: 5px;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.8rem;
+    color: #fff;
+    position: relative;
+    left: -0.3rem;
+    font-weight: bold;
+  }
+}
+.cart:hover {
+  text-decoration: none;
+}

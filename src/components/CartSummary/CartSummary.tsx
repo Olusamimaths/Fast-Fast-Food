@@ -1,5 +1,4 @@
 import React from "react";
-import TopBar from "../TopBar/TopBar";
 import Navigation from "../Navigation/Navigation";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -8,14 +7,12 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import { MdShoppingCart } from "react-icons/md";
 import "../../styles/CartSummary.scss";
+import { useCartState } from "../../state/CartProvider";
 
-import {
-  cart,
-  calcTotalPrice,
-  calcTotalQuantity,
-} from "../../utils/cartMethods";
+import { calcTotalPrice, calcTotalQuantity } from "../../utils/cartMethods";
 
 const CartSummary: React.FC = () => {
+  const { cart } = useCartState();
   const loggedIn = false;
   return (
     <>

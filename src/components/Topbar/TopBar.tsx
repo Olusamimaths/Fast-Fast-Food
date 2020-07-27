@@ -3,11 +3,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { TiLocation } from "react-icons/ti";
-import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import onScorll from "../../utils/onScroll";
 import { Link } from "react-router-dom";
-
 import "../../styles/TopBar.scss";
+import Cart from "../CartSummary/Cart";
+import { CartProvider, useCartState } from "../../state/CartProvider";
 
 interface TopBarProps {
   location?: string;
@@ -30,16 +30,9 @@ const TopBar: React.FC<TopBarProps> = ({ location = "Ogun" }) => {
           <Link to="/" className="brand-text">
             Fast Fast Food
           </Link>
-          <div className="cart d-flex align-items-center">
-            <div>
-              <FaSearch className="mr-4" />
-            </div>
-
-            <Link to="/cart" className="d-flex align-items-center cart">
-              <FaShoppingCart fontSize="1.4rem" />{" "}
-              <p className="cart-counter">12</p>
-            </Link>
-          </div>
+          <CartProvider>
+            <Cart />
+          </CartProvider>
         </Col>
       </Row>
     </Container>

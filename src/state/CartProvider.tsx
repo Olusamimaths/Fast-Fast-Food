@@ -15,18 +15,25 @@ type Dispatch = (action: Action) => void;
 type State = { cart: Array<CartItem> };
 type CartProviderProps = { children: React.ReactNode };
 
-const CartContext = React.createContext<State | undefined>(undefined);
+const CartStateContext = React.createContext<State | undefined>(undefined);
 const CartDispatchContext = React.createContext<Dispatch | undefined>(
   undefined
 );
 
-const cartReducer: React.Reducer<State, Action> = (
-  state: State,
-  action: Action
-) => {
+function cartReducer(state: State, action: Action): State {
   switch (action.type) {
     case "add": {
-      return { cart: [...state.cart, action.payload] };
+      let copied = [...state.cart];
+
+      for (let i = 0; i < copied.length; i++) {
+        if (copied[i].item === action.payload.item) {
+          copied[i].quantity += action.payload.quantity;
+          return { cart: copied };
+        }
+      }
+      return {
+        cart: [...state.cart, action.payload],
+      };
     }
 
     case "removeOne": {
@@ -58,44 +65,52 @@ const cartReducer: React.Reducer<State, Action> = (
       return state;
     }
   }
-};
+}
 
 const initialState: State = {
   cart: [
     {
-      item: "",
-      price: 0,
-      quantity: 0,
+      item: "Bracolli",
+      price: 400,
+      quantity: 1,
+    },
+    {
+      item: "Fried Rice",
+      price: 700,
+      quantity: 2,
     },
   ],
 };
 
-const CartProvider = ({ children }: CartProviderProps) => {
+function CartProvider({ children }: CartProviderProps) {
   const [state, dispatch] = React.useReducer(cartReducer, initialState);
+  console.log(state)
 
   return (
-    <CartContext.Provider value={state}>
+    <CartStateContext.Provider value={state}>
       <CartDispatchContext.Provider value={dispatch}>
         {children}
       </CartDispatchContext.Provider>
-    </CartContext.Provider>
+    </CartStateContext.Provider>
   );
-};
+}
 
-const useCartState = () => {
-  const context = React.useContext(CartContext);
+function useCartState() {
+  const context = React.useContext(CartStateContext);
   if (context === undefined) {
     throw new Error(`useCartState must be used within a CartProvider`);
   }
   return context;
-};
+}
 
-const useCartDispatch = () => {
+function useCartDispatch() {
   const context = React.useContext(CartDispatchContext);
   if (context === undefined) {
     throw new Error(`useCartDispatch must be used within a CartProvider`);
   }
   return context;
-};
+}
 
-export { CartProvider, useCartDispatch, useCartState };
+// const useCart = () => [useCartState(), useCartDispatch()];
+
+export { CartProvider, useCartState, useCartDispatch };
