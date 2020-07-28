@@ -8,6 +8,7 @@ type FoodItem = {
   title: string;
   description: string;
   link: string;
+  price: number;
 };
 
 type FoodItems = FoodItem[];
@@ -18,42 +19,49 @@ const foodItems: FoodItems = [
     title: "Yummy Spaghetti",
     description: "Best in the world",
     link: "#",
+    price: 100,
   },
   {
     image: food1,
     title: "Bracolli",
     description: "Try out the yummy bracolli",
     link: "#",
+    price: 400,
   },
   {
     image: food3,
-    title: "Fried Rice",
+    title: "Fried Plantain",
     description: "Fantabolous!!!!",
     link: "#",
+    price: 300,
   },
   {
     image: food4,
-    title: "Pizza Pizza",
+    title: "Jollof Rice",
     description: "Our pizza is the best!",
     link: "#",
+    price: 600,
   },
   {
     image: food3,
-    title: "Fried Rice",
+    title: "Rice",
     description: "Fantabolous!!!!",
     link: "#",
+    price: 700,
   },
   {
     image: food4,
-    title: "Pizza Pizza",
+    title: "!Pizza",
     description: "Our pizza is the best!",
     link: "#",
+    price: 800,
   },
   {
     image: food3,
-    title: "Fried Rice",
+    title: "Fried Plaintain",
     description: "Fantabolous!!!!",
     link: "#",
+    price: 200,
   },
 ];
 
