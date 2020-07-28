@@ -7,7 +7,6 @@ import onScorll from "../../utils/onScroll";
 import { Link } from "react-router-dom";
 import "../../styles/TopBar.scss";
 import Cart from "../CartSummary/Cart";
-import { CartProvider, useCartState } from "../../state/CartProvider";
 
 interface TopBarProps {
   location?: string;
@@ -30,9 +29,7 @@ const TopBar: React.FC<TopBarProps> = ({ location = "Ogun" }) => {
           <Link to="/" className="brand-text">
             Fast Fast Food
           </Link>
-          <CartProvider>
-            <Cart />
-          </CartProvider>
+          <Cart />
         </Col>
       </Row>
     </Container>

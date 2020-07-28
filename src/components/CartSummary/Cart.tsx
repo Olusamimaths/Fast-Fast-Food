@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useCartState } from "../../state/CartProvider";
 import { calcTotalQuantity } from "../../utils/cartMethods";
 import "../../styles/Cart.scss";
+import { useCartState } from "../../state/CartProvider";
 
 const Cart: React.FC = () => {
   const { cart } = useCartState();

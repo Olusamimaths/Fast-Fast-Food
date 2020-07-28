@@ -24,16 +24,21 @@ function cartReducer(state: State, action: Action): State {
   switch (action.type) {
     case "add": {
       let copied = [...state.cart];
+      let duplicate: Boolean = false;
 
       for (let i = 0; i < copied.length; i++) {
         if (copied[i].item === action.payload.item) {
           copied[i].quantity += action.payload.quantity;
-          return { cart: copied };
+          duplicate = true;
         }
       }
-      return {
-        cart: [...state.cart, action.payload],
-      };
+      return duplicate
+        ? {
+            cart: [...copied],
+          }
+        : {
+            cart: [...copied, action.payload],
+          };
     }
 
     case "removeOne": {
@@ -84,7 +89,6 @@ const initialState: State = {
 
 function CartProvider({ children }: CartProviderProps) {
   const [state, dispatch] = React.useReducer(cartReducer, initialState);
-  console.log(state)
 
   return (
     <CartStateContext.Provider value={state}>

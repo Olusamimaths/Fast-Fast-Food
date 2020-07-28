@@ -3,9 +3,10 @@ import TopBar from "../TopBar/TopBar";
 import Home from "../Home/Home";
 import SignIn from "../SignIn/SignIn";
 import SignUp from "../SignUp/SignUp";
-import CartSummary from "../CartSummary/CartSummary";
+import CartSummary from "../CartSummary/";
 import Footer from "../Footer/Footer";
 import { CartProvider } from "../../state/CartProvider";
+import AuthProvider from "../auth/AuthProvider";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "../../styles/App.scss";
@@ -14,7 +15,10 @@ const App: React.FC = () => {
   return (
     <>
       <Router>
-        <TopBar />
+        <CartProvider>
+          <TopBar />
+        </CartProvider>
+
         <Switch>
           <Route path="/signin">
             <SignIn />
@@ -24,7 +28,9 @@ const App: React.FC = () => {
           </Route>
           <Route path="/cart">
             <CartProvider>
-              <CartSummary />
+              <AuthProvider>
+                <CartSummary />
+              </AuthProvider>
             </CartProvider>
           </Route>
           <Route exact path="/">
