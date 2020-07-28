@@ -4,8 +4,10 @@ import React from "react";
 const sleep = (time: number) =>
   new Promise((resolve) => setTimeout(resolve, time));
 
-const getUser = () => sleep(1000).then(() => ({ username: "Olusola" }));
-// .then(() => null);
+const getUser = () =>
+  sleep(1000)
+    .then(() => ({ username: "Olusola" }))
+    .then(() => null);
 
 const AuthContext = React.createContext<State | undefined>(undefined);
 
